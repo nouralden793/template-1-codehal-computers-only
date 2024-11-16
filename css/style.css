@@ -1,0 +1,308 @@
+/*start var*/
+:root{
+    --main-transition: 0.3s;
+    --main-color: #1743e3;
+    --black-color: #222;
+}
+/*end var*/
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/*start header*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+@media (max-width: 767px) {
+  .header{
+    box-shadow: 0 0 10px rgb(23 67 227 / 80%);
+  }
+}
+.header::before{
+    content: "";
+    position: absolute;
+    top: -150px;
+    right: -260px;
+    width: 530px;
+    height: 500px;
+    background: var(--main-color);
+    transform: rotate(45deg);
+    z-index: -2;
+}
+@media (max-width: 991px) {
+  .header::before{
+    width: 480px;
+    height: 420px;
+  }
+}
+@media (max-width: 870px) {
+  .header::before{
+    width: 420px;
+    height: 420px;
+  }
+}
+@media (max-width: 767px) {
+  .header::before{
+     display: none;
+  }
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .header .container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+  }
+}
+.header .container .logo{
+    color: var(--black-color);
+    font-size: 25px;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+  .header .container nav:first-of-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+  }
+}
+.header .container nav:first-of-type a{
+    margin: 0 10px;
+    color: black;
+    transition: var(--main-transition);
+    font-weight: 600;
+}
+.header .container nav:first-of-type a.active,
+.header .container nav:first-of-type a:hover{
+    color: var(--main-color);
+}
+.header .container nav:last-child{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.header .container nav:last-child a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: var(--main-transition);
+}
+@media (max-width: 767px) {
+  .header .container nav:last-child a:hover{
+    border: 2px solid var(--main-color);
+  }
+  .header .container nav:last-child{
+    width: 200px;
+  }
+  .header .container nav:last-child a i{
+    color: var(--black-color);
+  }
+  .header .container nav:last-child a:hover i{
+    color: var(--main-color);
+  }
+}
+@media (min-width: 768px) {
+  .header .container nav:last-child a:hover{
+    border: 2px solid white;
+  }
+  .header .container nav:last-child a i{
+    color: white;
+  }
+}
+.header .container nav:last-child a i{
+    transform: rotate(-45deg);
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+/*end header*/
+/*start section*/
+.sec{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.sec .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.sec .container .content{
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .sec .container .content{
+    text-align: center;
+    margin-top: 70px;
+  }
+}
+.sec .container .content h2{
+    font-size: 40px;
+    text-transform: capitalize;
+    margin: 0 0 30px;
+    line-height: 50px;
+}
+@media (max-width: 767px) {
+  .sec .container .content h2{
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.sec .container .content h2 span{
+  color: var(--main-color);
+}
+.sec .container .content p{
+    margin: 20px 0 auto;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+@media (min-width: 1200px) {
+  .sec .container .content p{
+    max-width: 550px;
+  }
+}
+@media (max-width: 767px) {
+  .sec .container .content p{
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+.sec .container .content a{
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+    border: 2px solid var(--main-color);
+    transition: var(--main-transition);
+    position: relative;
+}
+@media (max-width: 767px) {
+  .sec .container .content a{
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+.sec .container .content a:hover{
+  color: var(--main-color);
+}
+.sec .container .content a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+    z-index: -1;
+}
+.sec .container .content a:hover::before{
+  width: 0;
+}
+.sec .container .image{
+  width: 50%;
+  z-index: 999;
+  position: relative;
+}
+.sec .container .image img{
+  width: 100%;
+  max-width: 100%;
+}
+.sec .container .image::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border: 30px solid var(--main-color);
+    z-index: -1;
+    transform: rotate(45deg);
+    box-shadow: -10px 0 20px rgb(0 0 0 / 40%), -10px 0 20px rgb(0 0 0 / 40%) inset;
+}
+@media (max-width: 991px) {
+  .sec .container .image::before{
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 767px) {
+  .sec .container .image::before{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .sec .container .image img{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .sec .container .image{
+    display: none;
+  }
+}
+/*end section*/
